@@ -28,7 +28,7 @@ async def get_wether(message: types.Message):
         sunset_timestamp = datetime.datetime.fromtimestamp(data['sys']['sunset'])
         length_of_the_day = sunset_timestamp - sunrise_timestamp
 
-        await message.reply(f"***{datetime.datetime.now().strftime('%Y-%m-%d %H:%M')}***\n"
+        await message.reply(f"***{datetime.datetime.timetz(datetime.tzinfo).strftime('%Y-%m-%d %H:%M')}***\n"
                             f"shahar: {city}\nTemperatura: {cur_weather} C° \n"
                             f"Namlik: {humidity}\nbosim: {pressure} mm.sm.us\nShamol: {wind} m/s\n"
                             f"quyosh chiqishi: {sunrise_timestamp}\nQuyosh botishi: {sunset_timestamp}\nKun davomiyligi: {length_of_the_day}\nKuningiz hayrli o'tsin")
